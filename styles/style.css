@@ -1,0 +1,161 @@
+/* TABLE OF CONTENT */
+/*
+1. everything
+
+*/
+
+/* 1. Everything */
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&family=Roboto:wght@300&display=swap');
+
+
+:root{
+  --orange-background: #ffa400;
+  --blue-background: #0caedb;
+  --font-color: #3F3D3D;
+  --white-background: #CAC2BB;
+  --other-white-background: #EFEFF0;
+}
+
+* { 
+  /* outline: 1px solid red;
+  outline-offset: -1px; */
+  padding: 0rem;
+  margin: 0;
+  background-color: var(--other-white-background);
+  font-weight: bolder;
+  text-decoration: none;
+}
+  
+.nav-bar a{
+  color: var(--font-color);
+}
+
+.nav-bar li{
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+  
+.nav-bar h1{
+  font-size: 2.2rem;
+  text-decoration: underline;
+  margin-left: 1rem;
+}
+
+.nav-bar ul{
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  padding: 1.5rem;
+}
+ 
+.nav-bar .right{
+  float: right;
+}
+
+.nav-bar hr{
+  border: 5px solid var(--blue-background);
+  border-radius: 2.5px;
+}
+
+
+span{
+  color: var(--blue-background);
+}
+
+p{
+  color: var(--blue-background);
+  font-family: 'League Spartan', sans-serif;
+}
+
+main h1, h2, h3{
+  font-family: 'Roboto', sans-serif;
+}
+
+hr{
+  border: 2px solid var(--font-color);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+}
+
+.hero{
+  display: flex;
+  margin: 1rem;
+}
+
+.hero .image-presentation {
+  flex:65%;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.hero .image-presentation img{
+  height: auto;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.hero .image-presentation p{
+  color: var(--orange-background);
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.hero .presentation{
+  flex:35%;
+  font-size: 2rem;
+  font-weight: bolder;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .presentation img{
+  height: auto;
+  width:100%;
+  border-radius: 10px;
+}
+
+.projets{
+  display: flex;
+  flex:30%;
+  color: var(--orange-background);
+  font-style:italic;
+  margin: 1rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.projets img{
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+}
+
+.projets h2{
+  color: var(--blue-background);
+  justify-items: center;
+}
+
+.material-symbols-outlined {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.aPropos {
+  display: flex;
+}
+
+.aPropos .texte-description {
+  flex:55%;
+}
+
+.aPropos .ville-rimouski{
+  flex: 45%;
+}
