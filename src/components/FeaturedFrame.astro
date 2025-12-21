@@ -1,0 +1,29 @@
+---
+const {title, script} = Astro.props;
+---
+
+
+<div class="frame">
+    <div class="overlay">
+        <h2 class="frame-title">{title}</h2>
+    </div>
+
+    <div class="frame-content">
+        <canvas id="scratcher"></canvas>
+    </div>
+
+    <script src={script} defer></script>
+</div>
+
+
+<style>
+    .frame-content {
+        display:flex;
+        justify-content: center;
+        flex-grow:1;
+    }
+
+    #scratcher {
+        width:100%;
+    }
+</style>
