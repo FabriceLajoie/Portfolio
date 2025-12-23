@@ -1,7 +1,7 @@
 ---
 import axios from 'axios';
 // import coinCursor from '../assets/gold-coin.png';
-const {title, script} = Astro.props;
+const { title } = Astro.props;
 const response = await axios.get("https://picsum.photos/800/600");
 const imageUrl = response.request.res.responseUrl;
 ---
@@ -16,5 +16,5 @@ const imageUrl = response.request.res.responseUrl;
         <canvas id="scratcher"></canvas>
     </div>
 
-    <script src={script} defer></script>
-</div>
+    <script src="/src/scripts/scratch-card.js" defer></script>
+</div>d

@@ -45,8 +45,6 @@ canvas.addEventListener("mouseup", () => {
     isDrawing = false;
 });
 
-canvas.addEventListener("pointerdown");
-
 function getPos(e) {
     const rect = canvas.getBoundingClientRect();
     const clientX = e.clientX ?? (e.touches && e.touches[0].clientX);
@@ -61,9 +59,7 @@ function scratch(e) {
     const pos = getPos(e);
     const x = pos.x;
     const y = pos.y;
-
-    console.log(x,y);
-
+    
     ctx.globalCompositeOperation = "destination-out";
     ctx.beginPath();
     ctx.arc(x, y, 25, 0, 2 * Math.PI );
