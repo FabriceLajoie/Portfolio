@@ -12,6 +12,28 @@ gradient.addColorStop(1, "#808080");
 ctx.fillStyle = gradient;
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+const spark = (event) => {
+    let i = document.createElement('i');
+    i.style.left = (event.pageX) + 'px';
+    i.style.top = (event.pageY) + 'px';
+    i.style.scale = `${Math.random() * 2 + 1}`;
+
+    i.style.setProperty('--x', getTransitionValue());
+    i.style.setProperty('--y', getTransitionValue());
+
+    document.body.appendChild(i);
+
+    setTimeout(() => {
+        document.body.removeChild(i);
+    }, 2000);
+}
+
+const getTransitionValue = () => {
+    return `${Math.random() * 100 - 50}px`;
+}
+
+canvas.addEventListener('mousemove', spark)
+
 let isDrawing = false;
 
 canvas.addEventListener("mousemove", (e) => {
@@ -44,6 +66,6 @@ function scratch(e) {
 
     ctx.globalCompositeOperation = "destination-out";
     ctx.beginPath();
-    ctx.arc(x, y, 30, 0, 2 * Math.PI );
+    ctx.arc(x, y, 25, 0, 2 * Math.PI );
     ctx.fill();
 }

@@ -154,3 +154,23 @@ body {
     z-index: 1;
     display:block;
 }
+
+i {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #494949;
+    animation: animate 0.5s linear forwards;
+    z-index: 3;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--x), var(--y));
+    }
+}
