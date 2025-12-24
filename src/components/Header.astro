@@ -1,0 +1,29 @@
+---
+import '../styles/global.css';
+const { active = '/' } = Astro.props;
+
+let homeActive = '';
+let aboutActive = '';
+let voodooActive = '';
+
+if(active == '/') {
+    homeActive = 'active';
+} else if(active == '/about') {
+    aboutActive = 'active';
+} else if(active == '/voodoo') {
+    voodooActive = 'active';
+}
+---
+
+<header>
+    <div class="title">
+        <div>🌸</div>
+        <h1>Le portfolio à Fabrice</h1>
+        <div>🌸</div>
+    </div>
+    <nav class="nav-home">
+        <a class={`nav-link ${homeActive}`} href="/">Accueil</a>
+        <a class={`nav-link ${aboutActive}`} href="/about">À propos</a>
+        <a class={`nav-link ${voodooActive}`} href="/voodoo">Photo de voodoo</a>
+    </nav>
+</header>

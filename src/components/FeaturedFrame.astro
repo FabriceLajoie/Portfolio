@@ -1,20 +1,12 @@
 ---
-import axios from 'axios';
-// import coinCursor from '../assets/gold-coin.png';
 const { title } = Astro.props;
-const response = await axios.get("https://picsum.photos/800/600");
-const imageUrl = response.request.res.responseUrl;
 ---
 
 <div class="frame">
     <div class="overlay">
         <h2 class="frame-title">{title}</h2>
     </div>
-
     <div class="frame-content" id="frame-card">
-        <div id="src-background"><img src={imageUrl}></div>
-        <canvas id="scratcher"></canvas>
+        <slot/>
     </div>
-
-    <script>import '../scripts/scratch-card.js';</script>
 </div>

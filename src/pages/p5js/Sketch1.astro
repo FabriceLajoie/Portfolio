@@ -1,0 +1,21 @@
+<div class="p5-container" id="sketch-1"></div>
+<script>
+  import p5 from "p5";
+  import sketch from "../../scripts/p5/sketch1.js";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("sketch-1");
+    if(!container) return null;
+    const rect = container.getBoundingClientRect();
+
+    new p5((p) => sketch(p, rect), container);
+  });
+</script>
+
+<style>
+  .p5-container {
+    position:absolute;
+    height: 100%;
+    width: 100%;
+  }
+</style>

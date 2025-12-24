@@ -1,0 +1,9 @@
+---
+import FeaturedFrame from "./FeaturedFrame.astro";
+
+const { id = 'sketch', title = 'P5', sketch } = Astro.props;
+---
+
+<FeaturedFrame title={title}>
+    <slot/>
+</FeaturedFrame>

@@ -1,0 +1,10 @@
+---
+import axios from 'axios';
+// import coinCursor from '../assets/gold-coin.png';
+const response = await axios.get("https://picsum.photos/800/600/?random&t=" + Date.now());
+const imageUrl = response.request.res.responseUrl;
+---
+
+<div id="src-background"><img src={imageUrl}></div>
+<canvas id="scratcher"></canvas>
+<script>import '../../scripts/scratch-card.js';</script>

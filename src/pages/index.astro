@@ -1,28 +1,23 @@
 ---
-import FeaturedFrame from '../components/FeaturedFrame.astro';
-import Layout from '../layouts/Layout.astro';
+import P5Wrapper from '../components/P5Wrapper.astro';
+import Header from '../components/Header.astro';
+import Scratcher from './projets/Scratcher.astro';
 import '../styles/global.css';
+import FeaturedFrame from '../components/FeaturedFrame.astro';
+import Sketch1 from './p5js/Sketch1.astro';
 ---
 
 
 <html lang="fr">
   <head>
 	<meta charset="UTF-8">
-    <title>My Homepage</title>
+    <title>Portfolio</title>
   </head>
   <body>
-    <div class="title">
-        <div>🌸</div>
-        <h1>Le portfolio à Fabrice</h1>
-        <div>🌸</div>
-    </div>
-    <nav class="nav-home">
-        <a class="nav-link active" href="/">Home</a>
-        <a class="nav-link" href="/about">About</a>
-        <a class="nav-link" href="/p5js/sketch1">Sketch 1</a>
-    </nav>
+    <Header active="/"/>
     <div class="main-container">
-      <FeaturedFrame title="Scratch card"/>
+      <FeaturedFrame title="Scratcher"><Scratcher/></FeaturedFrame>
+      <P5Wrapper title="L'apostrophe des entrailles"><Sketch1/></P5Wrapper>
     </div>
   </body>
 </html>
