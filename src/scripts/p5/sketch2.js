@@ -17,7 +17,7 @@ export default function sketch2(p, size) {
     }
 
     p.draw = () => {
-      if( p.millis() - lastDrawTime >= 400) {
+      if( p.millis() - lastDrawTime >= 300) {
         for( let i = 0; i < w / 32; i++ ) {
           for( let y = 0; y < h / 16; y++ ) {
             let r = randomInt(255);
@@ -30,6 +30,7 @@ export default function sketch2(p, size) {
             if (s === 1) {p.rect(y*32, i*32, 32, 32)}
             if (s === 2) {p.rect(y*32, i*32, 64, 64)}
             if (s === 3) {p.rect(y*32, i*32, 128, 128)}
+            // if (s === 4) {p.rect(y*32, i*32, 16, 16)}
             lastDrawTime = p.millis();
           }
         }

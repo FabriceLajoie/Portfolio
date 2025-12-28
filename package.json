@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "astro": "^5.16.5",
+    "astro-icon": "^1.1.5",
     "axios": "^1.13.2",
     "p5": "^2.1.2"
   }

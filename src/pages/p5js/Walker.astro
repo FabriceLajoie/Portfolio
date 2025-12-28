@@ -1,0 +1,59 @@
+---
+import {Icon} from "astro-icon/components";
+---
+
+<div class="p5-container" id="sketch-3">
+    <!-- <div class="controlPannel">
+        <div class="pannel-header">
+            <button>⚙</button>
+        </div>
+        <div class="pannel-body">
+            <h3>Il marche</h3>
+            <input type="range" id="speedRange" name="speedRange" min="1" max="10" value="5"/>
+
+        </div>
+    </div> -->
+</div>
+<script>
+    import p5 from "p5";
+    import sketch from "../../scripts/p5/walker";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("sketch-3");
+        if(!container) return null;
+        const rect = container.getBoundingClientRect();
+
+        new p5((p) => sketch(p, rect), container);
+    });
+</script>
+
+
+<style>
+  .p5-container {
+    position:absolute;
+    height: 100%;
+    width: 100%;
+  }
+
+  .controlPannel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* outline: 1px solid #fff; */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 5px;
+    border-radius: 3px;
+  }
+
+  .pannel-header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+</style>
