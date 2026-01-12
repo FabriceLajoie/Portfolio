@@ -2,9 +2,10 @@ import { randomInt } from '../../lib/functions.js';
 
 let walkers = [];
 
-export default function sketch(p, size) {
+export default function sketch(p, size, nbWalker) {
     let w = size.width;
     let h = size.height;
+    let nbWaler = nbWalker;
 
     console.log('Sketch size:', w, h);
     
@@ -13,7 +14,7 @@ export default function sketch(p, size) {
         p.createCanvas(w, h);
         p.background(255);
         p.rectMode(p.CENTER);
-        for( let i = 0; i < 1000; i++) {
+        for( let i = 0; i < nbWalker; i++) {
             walkers.push(new Walker(p));
         }
     }

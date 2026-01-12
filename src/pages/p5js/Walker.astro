@@ -3,16 +3,21 @@ import {Icon} from "astro-icon/components";
 ---
 
 <div class="p5-container" id="sketch-3">
-    <!-- <div class="controlPannel">
-        <div class="pannel-header">
-            <button>⚙</button>
+    <div class="controlPanel minimized" id="s3-panel">
+        <div class="panel-header">
+            <button id="s3-btn">⚙</button>
         </div>
-        <div class="pannel-body">
-            <h3>Il marche</h3>
-            <input type="range" id="speedRange" name="speedRange" min="1" max="10" value="5"/>
-
+        <div class="panel-body">
+            <h3 class="panel-title">Il marche</h3>
+            <div class="input walker-count">
+                <label for="walker-count-input">Nombre de marcheurs :</label>
+                <input type="number" id="walker-count-input" name="walker-count-input" min="1" max="2000" value="1000"/>
+            </div>
+            <div class="button-group actions">
+                <button id="apply">Appliquer</button>
+            </div>
         </div>
-    </div> -->
+    </div>
 </div>
 <script>
     import p5 from "p5";
@@ -23,8 +28,19 @@ import {Icon} from "astro-icon/components";
         if(!container) return null;
         const rect = container.getBoundingClientRect();
 
-        new p5((p) => sketch(p, rect), container);
+        new p5((p) => sketch(p, rect, 1000), container); 
     });
+
+    let panel = document.getElementById("s3-panel");
+    let btn = document.getElementById("s3-btn");
+    btn?.addEventListener("click", () => {
+      panel?.classList.toggle("minimized");
+    })
+    let applyBtn = document.getElementById("apply");
+    applyBtn?.addEventListener("click", () => {
+      
+    })
+
 </script>
 
 
@@ -35,25 +51,57 @@ import {Icon} from "astro-icon/components";
     width: 100%;
   }
 
-  .controlPannel {
+  .controlPanel {
     position: absolute;
     top: 10px;
     right: 10px;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.8);
-    /* outline: 1px solid #fff; */
-    align-items: center;
+    padding: 10px;
     justify-content: center;
+    flex-direction:column;
     display: flex;
-    padding: 5px;
+    min-width: 150px;   
+    transition: min-height 0.3s ease, padding 0.3s ease, min-width 0.3s ease;
+    outline: 1px solid #ccc;
     border-radius: 3px;
   }
 
-  .pannel-header button {
+  .panel-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .controlPanel.minimized {
+    min-height: auto;
+    min-width: auto;
+    display: block;
+    margin-left: 0;
+    padding: 5px;
+    outline: 1px solid #ccc;
+    border-radius: 3px;
+  } 
+
+  .controlPanel.minimized .panel-body {
+    display: none;
+  }
+
+  .panel-header button {
     background: none;
     border: none;
     color: #fff;
     font-size: 20px;
     cursor: pointer;
   }
+
+  .panel-body {
+    color: #fff;
+  }
+
+  .panel-title {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+  }
+
+
 </style>
